@@ -8,11 +8,12 @@ function App() {
   return (
 <>
 <NavBar/>
-<h1>Bienvenido</h1>
+<h1>Bienvenido a Nene</h1>
 <hr></hr>
 
-<hr></hr>
-<ItemListContainer/>
+<ItemListContainer producto="remeras" descripcion="blanca de algodon" precio="500"/>
+<ItemListContainer producto="Jean" descripcion="Clasicc" precio="2500"/>
+<ItemListContainer producto="Campera" descripcion="Cuero sintetico" precio="5000"/>
 </>
   )  
   

@@ -1,4 +1,4 @@
-import CartWidget from './components/CartWidget';
+import CartWidget from './CartWidget';
 const NavBar = () => {
 
     return (
@@ -21,7 +21,7 @@ const NavBar = () => {
           <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">{CartWidget}</a>
+          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"><CartWidget/></a>
         </li>
       </ul>
     </div>
