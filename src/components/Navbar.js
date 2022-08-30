@@ -1,11 +1,12 @@
 import CartWidget from './CartWidget';
-const NavBar = () => {
+
+const NavBar  = () => {
 
     return (
         <>
         <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Nene Basics</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDark" aria-controls="navbarDark" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -21,7 +22,7 @@ const NavBar = () => {
           <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"><CartWidget/></a>
+          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"><CartWidget /></a>
         </li>
       </ul>
     </div>
