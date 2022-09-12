@@ -1,14 +1,28 @@
+Nene Basics
 
-Aplicacion de E-commerce orientado para un local de ropa realizado con react , utiliza  el framework bootstrap para los estilos e incopora las
-librerias necesarias para la utilizacion de Hooks junto con las dependecias para un correcto enrutamiento correcto se adjuntan dichas 
-dependencias.
+El siguiente proyecto es una aplicación web hecha con React JS para mi curso de React JS en Coderhouse. Se trata de un eCommerce para una tienda de ropa
+ficticia. 
 
-  dependencias: 
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+Instalación
+
+Para clonar e instalar el proyecto, será necesario seguir los siguientes pasos:
+
+```bash(consola)
+git clone https://github.com/salaivaan/React_Coder/tree/Proyecto
+cd React_Coder-desafio_promesa
+npm install
+npm start
+```
+
+Dependencias 
+
+Todas las dependencias se instalan generalmente con el comando `npm install` a continuación las detallaré para que sean tomadas en cuenta:
+
+| Dependencia         | Descripción                              | Documentación                                                |
+| ------------------- | ---------------------------------------- | ------------------------------------------------------------ |
+| React Router DOM v6 | Enrutador para React JS                  | [Link](https://reactrouter.com/en/main/getting-started/installation) |
+| Bootstrap 5         | Framework                                | [Link](https://getbootstrap.com/docs/5.0/getting-started/introduction/) |
+
+
+
+
