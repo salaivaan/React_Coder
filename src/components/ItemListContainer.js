@@ -33,12 +33,15 @@ desafio(data.filter(item => item.categoryId == id))
 { 
 products.map(item => (<>
 
+
 <div>{item.id}</div>
 <div>{item.name}</div>
 <img src={item.image} alt=""></img>
 <div>{item.price} </div>
 
-<Link to={"/item/$id{item} "}><button>Detalles</button></Link>
+
+<Link to={`/item/${item.categoryId}`}><button>Detalles</button></Link>
+
 
 
 

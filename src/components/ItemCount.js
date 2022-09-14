@@ -30,6 +30,16 @@ const ItemCount = ({onAdd ,stock=0, initial=1}) => {
         <button type="button" class="btn btn-light">{count}</button>
         <button type="button" class="btn btn-danger" onClick={decrement}>Quitar</button>
         
+        
+      <button
+        className="button-primary"
+        onClick={() => {
+          onAdd();
+        }}
+       
+      >
+        Añadir
+      </button>
     </div>
 
             </>

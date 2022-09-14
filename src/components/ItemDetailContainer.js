@@ -1,14 +1,15 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import {data} from "./Utils/Data";
 import desafio from "./Utils/Promise"
-import ItemListContainer from "./ItemListContainer";
+import ItemDetail from "./ItemListContainer";
+import ItemCount from "./ItemCount";
 
 
 const ItemDetailContainer = () => {
 
-  const [products, setProducts] = useState([]);
+  const [item , setProducts] = useState([]);
   const {id} = useParams();
 //componentDidMount
 useEffect(()=> {
@@ -17,15 +18,31 @@ useEffect(()=> {
 desafio(data.find(item => item.id == id))
   .then(result => setProducts(result))
   .catch(err => console.log(err))
+  
+  
 
-} , [id])
+} , [id]);
+
+useEffect(()=> {
+
+  if(id){
+  //promise
+desafio(data.filter(item => item.id == id))
+  .then(result => setProducts(result))
+  .catch(err => console.log(err))
+  } else 
+
+  {desafio(data)
+    .then(result => setProducts(result))
+    .catch(err => console.log(err))
+  }
+} , [id]);
 
     return (
 <>
-<div>{data.id}</div>
-<div>{data.name}</div>
-<img src={data.image} alt=""></img>
-<div>{data.price}</div>
+
+<ItemDetail item={data}/>
+<ItemCount stock ={5} initial= {1} />
 
 
 

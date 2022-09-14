@@ -14,7 +14,7 @@ export const data = [{
         id: "Accesorios",
         name: "Cinturon",
         price: 300,
-        image: "https://static.wikia.nocookie.net/yugiohenespanol/images/6/6e/Foto_peque%C3%B1o_guardi%C3%A1n_alado.jpg/revision/latest?cb=20120207033355&path-prefix=es"
+        image: "https://imagenes.elpais.com/resizer/I-5d-BAhTO8XRDnLUk4N4T3SzKA=/1960x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/N6XLJ3HA5VGMNM2JHBZPPJ4RIQ.jpg"
         
         
         
