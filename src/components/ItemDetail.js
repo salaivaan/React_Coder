@@ -2,14 +2,23 @@ import ItemDetailContainer from "./ItemDetailContainer";
 import ItemCount from "./ItemCount";
 import {data} from "./Utils/Data";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 
-const itemDetail = (item = {data}) => {
+const ItemDetail = (item = {data}) => {
+
+const [itemCount, setItemCount]  = useState(0);
+
+const onAdd = () => {
+
+
+
+}
 
 
   
-    return(
+    return (
       
 <>
 
@@ -24,9 +33,20 @@ const itemDetail = (item = {data}) => {
         <h5 class="card-title">{item.data}</h5>
         <p class="card-text">{item.name}</p>
         <p class="card-text">{item.price} $<small class="text-muted"></small></p>
-        <p class="card-text"><small class="text-muted">{ 
-     
-        <ItemCount stock ={5} initial= {1}  /> }</small></p>
+        <p class="card-text">
+ {
+  itemCount === 0
+  ? <ItemCount stock={5} initial={1} onAdd={onAdd} />
+  : <Link to='/cart' style={{textDecoration: "none"}}><button variant="contained" color="secondary">CheckOut</button></Link>
+ 
+}
+         
+          <small class="text-muted"></small></p>
+          
+
+    
+
+
       </div>
     </div>
   </div>
@@ -35,4 +55,4 @@ const itemDetail = (item = {data}) => {
 </> )
 }
 
-export default itemDetail;
+export default ItemDetail;
