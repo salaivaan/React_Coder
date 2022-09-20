@@ -3,16 +3,18 @@ import ItemCount from "./ItemCount";
 import {data} from "./Utils/Data";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "./CartContext";
+import { useContext } from "react";
 
 
+const ItemDetail = ({item}) => {
 
-const ItemDetail = (item = {data}) => {
+const [itemCount, setItemCount]  =useState(0);
+const test = useContext(CartContext)
 
-const [itemCount, setItemCount]  = useState(0);
-
-const onAdd = () => {
-
-
+const onAdd = (qty) => {
+setItemCount(qty)
+test.addItem(item)
 
 }
 
@@ -33,15 +35,18 @@ const onAdd = () => {
         <h5 class="card-title">{item.data}</h5>
         <p class="card-text">{item.name}</p>
         <p class="card-text">{item.price} $<small class="text-muted"></small></p>
-        <p class="card-text">
- {
-  itemCount === 0
-  ? <ItemCount stock={5} initial={1} onAdd={onAdd} />
-  : <Link to='/cart' style={{textDecoration: "none"}}><button variant="contained" color="secondary">CheckOut</button></Link>
- 
-}
-         
-          <small class="text-muted"></small></p>
+
+          <button className="vermasinformacion">Ver mas informacion</button> */
+                    {
+                        ItemCount === 0
+                        ? <ItemCount stock={5} initial={0} onAdd={onAdd} qty={qty}/>
+                        : <Link to='/cart'><button>BUY</button></Link>
+                    } 
+      
+        
+
+
+    
           
 
     
@@ -56,3 +61,5 @@ const onAdd = () => {
 }
 
 export default ItemDetail;
+
+

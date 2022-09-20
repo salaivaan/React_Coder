@@ -7,13 +7,16 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart';
+import CartContextProvider from './components/CartContext';
 
 function App() {
   return (
-<>
+
+<CartContextProvider>
 <BrowserRouter>
 <NavBar/>
 <h1>Bienvenido a Nene</h1>
+
 <hr></hr>
 <Routes>
   <Route  path='/' element={<ItemListContainer/>}/>
@@ -29,8 +32,9 @@ function App() {
 
 
 </BrowserRouter>
-</>
-  )  
+</CartContextProvider>
+
+  )
   
 };
 

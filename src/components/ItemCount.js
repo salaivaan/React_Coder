@@ -1,5 +1,5 @@
-import { useState } from "react";
-import CartWidget from "./CartWidget";
+import { useState} from "react";
+import { Link } from 'react-router-dom';
 
 const ItemCount = ({onAdd ,stock=0, initial=1}) => {
 
@@ -38,14 +38,13 @@ const ItemCount = ({onAdd ,stock=0, initial=1}) => {
         <button type="button" class="btn btn-primary" onClick={increment}>Agregar</button>
         <button type="button" class="btn btn-light">{qty}</button>
         <button type="button" class="btn btn-danger" onClick={decrement}>Quitar</button>
-        
-        {
-                stock && qty
-                ? <button variant="contained" color="primary" onClick={() => onAdd(qty)}>Add to Cart</button>
-                : <button>Add to Cart</button>
-            }   
-        
-    
+
+
+        <Link to='/Cart'><button className="buy" onClick={()=>onAdd=(qty)}>Comprar</button></Link>
+   
+         
+  
+       
     </div>
 
             </>

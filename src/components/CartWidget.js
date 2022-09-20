@@ -4,8 +4,8 @@ import ItemListContainer from "./ItemListContainer";
 
 const CartWidget = () => {
 
-    const onAdd = (count) => {
-        alert(`Agregaste ${count} productos`);
+    const onAdd = (item) => {
+        alert(`Agregaste ${item} productos`);
       };
 
 {
