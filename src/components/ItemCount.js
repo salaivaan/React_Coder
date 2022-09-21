@@ -1,7 +1,7 @@
 import { useState} from "react";
 import { Link } from 'react-router-dom';
 
-const ItemCount = ({onAdd ,stock=0, initial=1}) => {
+const ItemCount = ({addItem ,stock=0, initial=1}) => {
 
 
 
@@ -40,7 +40,7 @@ const ItemCount = ({onAdd ,stock=0, initial=1}) => {
         <button type="button" class="btn btn-danger" onClick={decrement}>Quitar</button>
 
 
-        <Link to='/Cart'><button className="buy" onClick={()=>onAdd=(qty)}>Comprar</button></Link>
+        <Link to='/Cart'><button className="buy" onClick={()=> addItem =(qty)}>Comprar</button></Link>
    
          
   

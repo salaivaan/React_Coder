@@ -7,12 +7,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart';
-import CartContextProvider from './components/CartContext';
+import ItemCount from './components/ItemCount';
+import CartContexProvider from './components/CartContext';
+
 
 function App() {
   return (
-
-<CartContextProvider>
+<>
+<CartContexProvider>
 <BrowserRouter>
 <NavBar/>
 <h1>Bienvenido a Nene</h1>
@@ -32,9 +34,9 @@ function App() {
 
 
 </BrowserRouter>
-</CartContextProvider>
-
-  )
+</CartContexProvider>
+</>
+  )  
   
 };
 

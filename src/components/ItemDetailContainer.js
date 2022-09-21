@@ -30,7 +30,7 @@ desafio(data.find(item => item.id == id))
 <>
 
 <ItemDetail item={data}/>
-<ItemCount stock={5} initial={0} quantity={""}/>
+<ItemCount stock={5} initial={0} />
 
 
 

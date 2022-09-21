@@ -1,29 +1,29 @@
 import ItemDetailContainer from "./ItemDetailContainer";
 import ItemCount from "./ItemCount";
 import {data} from "./Utils/Data";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "./CartContext";
-import { useContext } from "react";
+import { CartContex  } from "./CartContext";
+
 
 
 const ItemDetail = ({item}) => {
 
-const [itemCount, setItemCount]  =useState(0);
-const test = useContext(CartContext)
-
-const onAdd = (qty) => {
-setItemCount(qty)
-test.addItem(item)
+  const [itemCount, setItemCount] = useState(0)
+  const test = useContext(CartContex);
+  
+  const onAdd = (qty)=>{
+      setItemCount(qty);
+      test.addItem(item);
 
 }
 
 
   
-    return (
+      return (
       
 <>
-
+<ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd} />
 
 <div class="card">
   <div class="row g-0">
@@ -37,12 +37,13 @@ test.addItem(item)
         <p class="card-text">{item.price} $<small class="text-muted"></small></p>
 
           <button className="vermasinformacion">Ver mas informacion</button> */
-                    {
-                        ItemCount === 0
-                        ? <ItemCount stock={5} initial={0} onAdd={onAdd} qty={qty}/>
+          /* {
+                      /*  ItemCount === 0
+                        ? <ItemCount stock={5} initial={0} addItem={addItem}/>
                         : <Link to='/cart'><button>BUY</button></Link>
-                    } 
-      
+                      */}  */
+       
+       <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd} />
         
 
 
@@ -57,8 +58,8 @@ test.addItem(item)
   </div>
 </div>
 
-</> )
-}
+</> )}
+
 
 export default ItemDetail;
 
