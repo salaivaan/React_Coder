@@ -29,7 +29,7 @@ console.log(products)
     return (
 <>
 
-<ItemDetail item={products}/>
+<ItemDetail products={products}/>
 
 
 
