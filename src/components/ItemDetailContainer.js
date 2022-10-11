@@ -1,36 +1,36 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams} from "react-router-dom";
-import {data} from "./Utils/Data";
-import desafio from "./Utils/Promise"
 import ItemDetail from "./ItemListContainer";
-import ItemCount from "./ItemCount";
-
+import { firebaseDos } from "./Utils/FirebaseConfig"
+import { db, fsFetchDetail } from "./Utils/FirebaseConfig";
 
 
 const ItemDetailContainer = () => {
 
-  const [item , setProducts] = useState([]);
+  const [products , setProducts] = useState([]);
   const {id} = useParams();
 //componentDidMount
-useEffect(()=> {
+useEffect(()=> 
+{
+  fsFetchDetail(id)
+      .then(result => setProducts(result))
+      .catch(err => console.log(err))
+},[id]);
 
-  //promise
-desafio(data.find(item => item.id == id))
-  .then(result => setProducts(result))
-  .catch(err => console.log(err))
-  
-  
+console.log(products)
 
-} , [id]);
+
+
+
 
 
 
     return (
 <>
 
-<ItemDetail item={data}/>
-<ItemCount stock={5} initial={0} />
+<ItemDetail item={products}/>
+
 
 
 

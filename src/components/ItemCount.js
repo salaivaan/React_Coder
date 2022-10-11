@@ -40,7 +40,7 @@ const ItemCount = ({onAdd ,stock=0, initial=1}) => {
         <button type="button" class="btn btn-danger" onClick={decrement}>Quitar</button>
 
 
-        <Link to='/Cart'><button className="buy" onClick={()=>onAdd=(qty)}>Comprar</button></Link>
+        <Link to='/Cart'><button className="buy" onClick={()=> onAdd =(qty)}>Comprar</button></Link>
    
          
   
