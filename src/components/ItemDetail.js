@@ -26,34 +26,13 @@ const ItemDetail = ({item}) => {
       
 <>
 
-
-<div class="card">
-  <div class="row g-0">
-    <div class="col-5 col-sm-4">
-      <img src= {item.image} class="img-fluid w-25" alt="card-horizontal-image"img/>
-    </div>
-    <div class="col-7 col-sm-8">
-      <div class="card-body">
-        <h5 class="card-title">{item.name}</h5>
-        <p class="card-text">{item.stock} </p>
-        <p class="card-text">{item.price} $<small class="text-muted"></small></p>
-        <p class="card-text"><ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd}/> $<small class="text-muted"></small>
-        </p>
+<Item item={item}/>
+<ItemCount 
 
 
-        
+/>
 
 
-    
-          
-
-    
-
-
-      </div>
-    </div>
-  </div>
-</div>
 
 </> )}
 

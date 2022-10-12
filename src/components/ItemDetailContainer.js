@@ -4,7 +4,8 @@ import { useParams} from "react-router-dom";
 import ItemDetail from "./ItemListContainer";
 import { firebaseDos } from "./Utils/FirebaseConfig"
 import { db, fsFetchDetail } from "./Utils/FirebaseConfig";
-
+import ItemCount from "./ItemCount";
+import Item from "./Item";
 
 const ItemDetailContainer = () => {
 
@@ -29,10 +30,10 @@ console.log(products)
     return (
 <>
 
-<ItemDetail products={products}/>
 
 
-
+<Item item={products}/>
+<ItemCount stock={products.stock}/>
 
 
 
