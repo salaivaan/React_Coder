@@ -18,22 +18,22 @@ const NavBar  = () => {
     <div class="collapse navbar-collapse" id="navbarDark">
     
       <ul class="navbar-nav me-auto mb-2 mb-xl-0">
-      <Link to={"category/3"}>
+      <Link to={"category/4"}>
         <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="#">Abrigos</a>
         </li>
       </Link>
-      <Link to={"/category/4"}>
+      <Link to={"category/2"}>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pantalones</a>
+          <a class="nav-link " href="#">Pantalones</a>
         </li>
         </Link>
-        <Link to={"/category/1"}>
+        <Link to={"category/3"}>
         <li class="nav-item">
           <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Remeras</a>
         </li>
         </Link>
-        <Link to={"/category/2"}>
+        <Link to={"category/1"}>
         <li class="nav-item">
           <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Accesorios</a>
         </li>

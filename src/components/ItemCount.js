@@ -34,13 +34,13 @@ const ItemCount = ({onAdd ,stock=0, initial=1}) => {
         return (
             <>
 
-    <div class="btn-group btn-group-sm" role="group" aria-label ="Small button group">
+    <div class="btn-group btn-group-sm col-md-3 container-fluid d-flex justify-content-around bd-highlight mb-2" role="group" aria-label ="Small button group">
         <button type="button" class="btn btn-primary" onClick={increment}>Agregar</button>
         <button type="button" class="btn btn-light">{qty}</button>
         <button type="button" class="btn btn-danger" onClick={decrement}>Quitar</button>
 
 
-        <Link to='/Cart'><button className="buy" onClick={()=>onAdd=(qty)}>Comprar</button></Link>
+        <Link to='/Cart'><button className="buy" onClick={()=> onAdd =(qty)}>Comprar</button></Link>
    
          
   
