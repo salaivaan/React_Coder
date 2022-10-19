@@ -1,6 +1,4 @@
 
-import ItemCount from "./ItemCount";
-import ItemListContainer from "./ItemListContainer";
 
 const CartWidget = () => {
 

@@ -1,10 +1,8 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams} from "react-router-dom";
-import ItemDetail from "./ItemListContainer";
-import { db, fsFetchDetail } from "./Utils/FirebaseConfig";
-import ItemCount from "./ItemCount";
-import Item from "./Item";
+import ItemDetail from "./ItemDetail";
+import { fsFetchDetail } from "./Utils/FirebaseConfig";
 
 const ItemDetailContainer = () => {
 
@@ -18,7 +16,7 @@ useEffect(()=>
       .catch(err => console.log(err))
 },[id]);
 
-console.log(products)
+
 
 
 
@@ -31,8 +29,7 @@ console.log(products)
 
 
 
-<Item item={products}/>
-<ItemCount stock={products.stock}/>
+
 <ItemDetail item={products}/>
 
 

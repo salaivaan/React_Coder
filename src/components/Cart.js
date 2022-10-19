@@ -1,23 +1,16 @@
 import { Link } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { CartContex } from "./CartContext";
-import { serverTimestamp } from "firebase/firestore";
 import { db } from "./Utils/FirebaseConfig";
-import { collection,doc,setDoc} from "firebase/firestore"
+import { collection,doc,setDoc,updateDoc,increment,serverTimestamp, addDoc, getFirestore} from "firebase/firestore"
 
 const Cart = () =>{
 
   const test = useContext(CartContex);
 
-  const createOrder = ( ) => {
-  let itemDb = test.cartList.map(item => ({
-    id: item.id,
-    title: item.name,
-    qty: item.qty,
-    price: item.price
-  }))
+
   
-    let order = {
+    const order = {
 
     buyer:{
         name:"Roman Riquelme",
@@ -26,34 +19,32 @@ const Cart = () =>{
 
     },
     date:serverTimestamp(),
-    items:  itemDb
+    items: test.cartList.map(item => ({id: item.id, title:item.name, price:item.price, quantity:item.quantity })) ,
+  
   }
   
-  
 
+  const handleClick = () =>{
 
-
-
-  const createOrderInFireStore = async ()=>{
-    const newOrderRef = doc(collection(db, "orders"))
-    await setDoc(newOrderRef, order)
-    return newOrderRef;
+    const db = getFirestore();
+    const orderCollection= collection(db,"orders");
+    addDoc(orderCollection, order)
+    .then(({id}) => console.log(id))
   }
-  createOrderInFireStore()
-    .then(result => alert("your order has been taken " + result.id))
-    .catch(err=> console.log(err))
 
-  }
+
+
 return(
     <>
-     {
-        test.cartList.map(item=><li>{item.name} (qty={item.qty}) <button onClick={()=> test.removeItem(item.id)}>ELIMINAR</button><h4>{item.price} usd</h4></li>)
+
+{
+test.cartList.map(item=><li >{item.name} <img src={item.image} /> <button  onClick={()=>test.removeItem(item.id)}>ELIMINAR</button><h4 >{item.price} usd</h4></li>)
      }
 
 
      
      <h3>Total =</h3>
-      <button className="btnPagar" onClick={createOrder}>Pagar</button>
+      <button className="btnPagar" onClick={handleClick}>Pagar</button>
       <Link to='/'><button className="continue">Seguir comprando</button></Link>
     
     </>

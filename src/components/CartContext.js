@@ -1,6 +1,6 @@
 
 import { Children, createContext, useState } from "react";
-import Item from "./Item";
+
 
  export const CartContex = createContext();
 
@@ -24,7 +24,7 @@ import Item from "./Item";
     }
 
     const removeItem = (id) =>{
-        let newCartList = cartList.filter(item => item.Id !== id)
+        let newCartList = cartList.filter(item => item.id !== id)
         setCartList(newCartList)
     }
     return(<>
