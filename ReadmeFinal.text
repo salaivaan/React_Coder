@@ -1,0 +1,54 @@
+Nene Basics - Proyecto React.js.
+
+
+Este proyecto fue creado para ser presentado como la entrega final del curso React.js realizado en la plataforma de aprendizaje Coderhouse. Desarrollado por: Ivan Sala. 
+Sobre el proyecto
+
+El encargo fue crear un E-Commerce, desarrollando su flujo, funcionalidades e interfaz de usuario como prioridades, sin enfocarse tanto en los estilos.
+
+La idea  para realizar este proyecto fue desarrollar un comercio electrónico de indumentaria, llamado Nene Basics.
+Tecnologías implementadas
+
+En este comercio electrónico, encontrará que la estructura base se creó en torno a React.js con un uso adicional de Javascript. No obstante, 
+existen otras tecnologías involucradas, Bootstrap para estilos adicionales, Git para el control de versiones y Firebase para el almacenamiento de datos.
+A continuación  hay una lista del uso específico que se le dio a cada herramienta.
+
+React.js
+
+    Estructura principal del proyecto, construido orientado a componentes y con un flujo de trabajo de aplicación de una sola página.
+    Hooks para guardar y actualizar datos (useState y useEffect).
+    Use of Context para un mejor y más específico y optimizado manejo de DOM.
+    Navegabilidad a través de dependencias react-router-dom.
+
+JavaScript
+
+    Funciones básicas e intermedias utilizadas para fines específicos, como eventos (p. ej., onClicks) y validaciones (p. ej., representación condicional).
+    Definición de variables para su posterior uso en la citada estructura.
+    Uso de promesas (async) para almacenamiento de datos (lista de carritos y órdenes de compra) y carga de datos (lista de artículos y detalles de artículos).
+
+Bootstrap
+
+    Bootstrap: estilos predefinidos para diseños de cuadrícula y flexibles, así como componentes básicos de HTML5 (por ejemplo, botones).
+
+
+Firebase
+
+    Almacenamiento de datos (productos y órdenes de compra).
+
+Git
+
+    Control de versiones y envío de confirmación (al repositorio remoto de GitHub).
+
+Dependencias y gestión de paquetes
+
+Para fines de gestión de paquetes, la herramienta seleccionada para su uso fue npm.js. En cuanto a las dependencias, este proyecto tiene solo 3:
+
+    react, que se instala automáticamente a través del comando create-react-app ejecutado en la consola al crear la plantilla para el proyecto.
+    react-router-dom, utilizado con fines de navegabilidad y mencionado anteriormente en la sección React.js de Tecnologías implementadas.
+    firebase, que se usa con fines de almacenamiento y se requiere para la implementación adecuada de Firestore.
+
+Resumen
+
+Habiendo especificado de qué se trata el proyecto, cuál era su propósito y enumerando todas las herramientas utilizadas para desarrollarlo, 
+Es básico, pero contiene todas las características principales que tiene cualquier comercio electrónico generico : un catálogo de productos,
+su vista detallada, un carrito de compras y un proceso que genera automáticamente órdenes de compra.
