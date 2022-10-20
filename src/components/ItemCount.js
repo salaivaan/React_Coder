@@ -8,10 +8,6 @@ const ItemCount = ({onAdd ,stock=0, initial=1}) => {
     const [qty, setQty] = useState(0)
 
     
-
-
-
-
     const increment = () => {
         if (qty < stock) {
             setQty (qty + 1);
@@ -24,27 +20,20 @@ const ItemCount = ({onAdd ,stock=0, initial=1}) => {
             
         }
 
-
-        
     }
 
     
-
-
         return (
             <>
 
-    <div class="btn-group btn-group-sm col-md-3 " role="group" aria-label ="Small button group">
-        <button type="button" class="btn btn-primary" onClick={increment}>Agregar</button>
-        <button type="button" class="btn btn-light">{qty}</button>
-        <button type="button" class="btn btn-danger" onClick={decrement}>Quitar</button>
+    <div className="btn-group btn-group-sm col-md-3 " role="group" aria-label ="Small button group">
+        <button type="button" className="btn btn-primary" onClick={increment}>Agregar</button>
+        <button type="button" className="btn btn-light">{qty}</button>
+        <button type="button" className="btn btn-danger" onClick={decrement}>Quitar</button>
 
-
-        <Link to='/Cart'><button className="buy" onClick={()=> onAdd =(qty)}>Comprar</button></Link>
-   
-         
-  
-       
+        
+        <Link to='/Cart'><button className="buy" onClick={()=> onAdd(qty)}>Comprar</button></Link>
+        
     </div>
 
             </>

@@ -1,16 +1,23 @@
 import { Link } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { useContext} from "react";
 import { CartContex } from "./CartContext";
 import { db } from "./Utils/FirebaseConfig";
-import { collection,doc,setDoc,updateDoc,increment,serverTimestamp, addDoc, getFirestore} from "firebase/firestore"
+import { collection,doc,setDoc,updateDoc,increment,serverTimestamp} from "firebase/firestore"
 
 const Cart = () =>{
 
   const test = useContext(CartContex);
 
-
   
-    const order = {
+  const createOrder = ( ) => {
+  let itemForDb = test.cartList.map(item => ({
+      id: item.id,
+      title: item.name,
+      price: item.price,
+      qty: item.stock
+  }))
+  
+    let order = {
 
     buyer:{
         name:"Roman Riquelme",
@@ -19,21 +26,37 @@ const Cart = () =>{
 
     },
     date:serverTimestamp(),
-    items: test.cartList.map(item => ({id: item.id, title:item.name, price:item.price, quantity:item.quantity })) ,
-  
+    items: itemForDb 
+    
   }
   
+  console.log(createOrder);
 
-  const handleClick = () =>{
 
-    const db = getFirestore();
-    const orderCollection= collection(db,"orders");
-    addDoc(orderCollection, order)
-    .then(({id}) => console.log(id))
+
+
+  const createOrderInFireStore = async ()=>{
+    const newOrderRef = doc(collection(db, "orders"))
+    await setDoc(newOrderRef, order)
+    return newOrderRef;
   }
+  createOrderInFireStore()
+  .then(result => {
+    alert("your order has been taken " + result.id)
+    test.cartList.forEach(async(item) =>{
+      const itemRef = doc(db, "products", item.idItem);
+      await updateDoc(itemRef,{
+        stock: increment(-item.qtyItem)
+        
+      });
+    })
+    test.removeItem()
+  })
 
 
+    .catch(err=> console.log(err))
 
+  }
 return(
     <>
 
@@ -44,7 +67,7 @@ test.cartList.map(item=><li >{item.name} <img src={item.image} /> <button  onCli
 
      
      <h3>Total =</h3>
-      <button className="btnPagar" onClick={handleClick}>Pagar</button>
+      <button className="btnPagar" onClick={createOrder}>Pagar</button>
       <Link to='/'><button className="continue">Seguir comprando</button></Link>
     
     </>
